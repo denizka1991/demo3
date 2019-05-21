@@ -1,12 +1,12 @@
 # Configure the GCP Provider
 provider "google" {
-  credentials = "${file("./keys/gcp-key.json")}"
+  credentials = "${file("./creds/key.json")}"
   region = "us-central1"
-  project = "careful-time-232710"
+  project = "monitoringtest-239812"
 }
 
 resource "google_storage_bucket" "bucket" {
-  name = "superdemo3"
+  name = "superdemo34"
   location = "EU"
 
 }
