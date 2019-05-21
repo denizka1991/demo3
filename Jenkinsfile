@@ -39,7 +39,7 @@ spec:
     stage('Clone repo') {
       steps {
       checkout([$class: 'GitSCM', branches: [[name: '*/test1']],
-        userRemoteConfigs: [[url: 'https://github.com/olehdevops/demo3.git']]])
+        userRemoteConfigs: [[url: 'https://github.com/denizka1991/demo3.git']]])
       }
     }
     stage("python"){
@@ -64,9 +64,9 @@ spec:
     stage('Checkout') {
       steps {
       // checkout scm
-        sh 'mkdir -p keys'
-        sh 'echo -n $SVC_ACCOUNT_KEY | base64 -d > ./keys/gcp-key.json'
-        sh 'cat ./keys/gcp-key.json'
+        sh 'mkdir -p creds'
+         sh "cp \$SVC_ACCOUNT_KEY ./creds/key.json"
+       // sh 'cat ./keys/gcp-key.json'
         sh 'ls'
       }
     }
